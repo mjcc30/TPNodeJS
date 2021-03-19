@@ -1,0 +1,62 @@
+<%- include('partials/head') %>
+
+<%- include('header') %>
+
+<h1>Annonces</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Code</th>
+      <th scope="col">Titre</th>
+      <th scope="col">Description</th>
+      <th scope="col">Adresse</th>
+      <th scope="col">Code Postal</th>
+      <th scope="col">Ville</th>
+      <th scope="col">Adresse</th>
+      <th scope="col">Modifier</th>
+      <th scope="col">Supprimer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% annonces.forEach((annonce) => { %>
+    <tr>
+      <th scope="row"><a href="http://localhost:4000/annonce/<%= annonce._id %>">
+        <%= annonce._id %>
+        </a>
+      </th>
+      <td><%= annonce.titre %></td>
+      <td><%= annonce.description %></td>
+      <td><%= annonce.adresse %></td>
+      <td><%= annonce.code_postal %></td>
+      <td><%= annonce.ville %></td>
+      <td><%= annonce.prix %></td>
+      <td>
+          <a class="btn btn-primary" href="http://localhost:4000/modifier/<%= annonce._id %>">
+          Modifier
+          </a>
+      </td>
+      <td><button class="btn btn-primary" type="button" onclick="deleteAnnonce('<%= annonce._id %>')">Supprimer</button></td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<table>
+  <tr>
+    
+  </tr>
+  
+    <tr>
+      <td>
+        
+      </td>
+      
+            
+      <td>
+        
+      </td>
+    </tr>
+  </table>
+
+<%- include('footer') %>
